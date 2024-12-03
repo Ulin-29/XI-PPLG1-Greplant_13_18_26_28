@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Island;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index() {
-        return view("index");
+        $islands = Island::all();
+        return view("index", compact("islands"));
     }
 }
