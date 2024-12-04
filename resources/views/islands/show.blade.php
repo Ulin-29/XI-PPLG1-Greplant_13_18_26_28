@@ -2,7 +2,7 @@
 <html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="wpidth=device-width, initial-scale=1.0">
     <title>{{ $island->name }} - Plants</title>
     @vite('resources/css/app.css')
 </head>
@@ -11,13 +11,13 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <img src="{{ asset('assets/image/greplant.png') }}" alt="greplant" class="h-14 w-auto hover:scale-105 transition-transform">
+                    <img src="{{ asset('assets/image/greplant.png') }}" alt="greplant" class="h-14 w-auto">
                 </div>
                 <nav>
                     <ul class="flex space-x-10">
-                        <li><a href="/" class="text-gray-700 hover:text-green-600 font-medium transition-all hover:scale-105 inline-block">Home</a></li>
-                        <li><a href="#about" class="text-gray-700 hover:text-green-600 font-medium transition-all hover:scale-105 inline-block">About</a></li>
-                        <li><a href="#contact" class="text-gray-700 hover:text-green-600 font-medium transition-all hover:scale-105 inline-block">Contact</a></li>
+                        <li><a href="/" class="text-gray-700 hover:text-green-600 font-medium inline-block">Home</a></li>
+                        <li><a href="#about" class="text-gray-700 hover:text-green-600 font-medium inline-block">About</a></li>
+                        <li><a href="#contact" class="text-gray-700 hover:text-green-600 font-medium inline-block">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -37,18 +37,17 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 @foreach($plants as $plant)
-                    <div class="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="group bg-white rounded-xl shadow-md overflow-hidden">
                         @if($plant->image)
                             <div class="aspect-w-16 aspect-h-9 overflow-hidden">
                                 <img
                                     src="{{ asset('storage/' . $plant->image) }}"
                                     alt="{{ $plant->name }}"
-                                    class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500"
-                                >
+                                    class="w-full h-64 object-cover">
                             </div>
                         @endif
                         <div class="p-8">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-green-600 transition-colors">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">
                                 {{ $plant->name }}
                             </h3>
                             <p class="text-sm italic text-gray-600 mb-4 font-medium">
@@ -63,11 +62,5 @@
             </div>
         </div>
     </main>
-
-    <footer class="bg-gradient-to-r from-green-800 to-green-900 text-white py-10">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-sm font-medium opacity-90">&copy; {{ date('Y') }} GrePlant. All rights reserved.</p>
-        </div>
-    </footer>
 </body>
 </html>

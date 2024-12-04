@@ -10,10 +10,6 @@ class Plant extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'scientific_name', 'description', 'image', 'island_id'];
-
-    /**
-     * Relasi ke model Island (Many-to-One).
-     */
     public function island()
     {
         return $this->belongsTo(Island::class);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +11,13 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <img src="{{ asset('assets/image/greplant.png') }}" alt="greplant" class="h-14 w-auto hover:scale-105 transition-transform">
+                    <img src="{{ asset('assets/image/greplant.png') }}" alt="greplant" class="h-14 w-auto">
                 </div>
                 <nav>
                     <ul class="flex space-x-10">
-                        <li><a href="#home" class="text-gray-700 hover:text-green-600 font-medium transition-all hover:scale-105 inline-block">Home</a></li>
-                        <li><a href="#about" class="text-gray-700 hover:text-green-600 font-medium transition-all hover:scale-105 inline-block">About</a></li>
-                        <li><a href="#contact" class="text-gray-700 hover:text-green-600 font-medium transition-all hover:scale-105 inline-block">Contact</a></li>
+                        <li><a href="#home" class="text-gray-700 hover:text-green-600 font-medium inline-block">Home</a></li>
+                        <li><a href="#about" class="text-gray-700 hover:text-green-600 font-medium inline-block">About</a></li>
+                        <li><a href="#contact" class="text-gray-700 hover:text-green-600 font-medium inline-block">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -45,8 +45,8 @@
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                     @foreach($islands as $island)
                         <a href="{{ route('island.show', $island->id) }}"
-                           class="block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-4 text-gray-700 hover:text-green-600 font-medium">
-                            {{ $island->name }}
+                            class="block bg-white rounded-lg shadow-md p-4 text-gray-700 hover:text-green-600 font-medium">
+                             {{ $island->name }}
                         </a>
                     @endforeach
                 </div>
@@ -80,20 +80,17 @@
                     </div>
 
                     <h3 class="text-2xl font-bold text-gray-800 mb-6">Apa yang Kami Lakukan</h3>
-                    <ul class="space-y-4 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-green-600 mr-2">•</span>
-                            <span><strong>Basis Data Tumbuhan yang Komprehensif:</strong> Katalog yang luas tentang spesies tumbuhan di Indonesia.</span>
+                    <ol class="space-y-4 text-gray-700 list-decimal list-inside">
+                        <li>
+                            <strong>Basis Data Tumbuhan yang Komprehensif:</strong> Katalog yang luas tentang spesies tumbuhan di Indonesia.
                         </li>
-                        <li class="flex items-start">
-                            <span class="text-green-600 mr-2">•</span>
-                            <span><strong>Profil Tumbuhan Berdasarkan Wilayah:</strong> Kategorisasi berdasarkan wilayah untuk kemudahan pencarian.</span>
+                        <li>
+                            <strong>Profil Tumbuhan Berdasarkan Wilayah:</strong> Kategorisasi berdasarkan wilayah untuk kemudahan pencarian.
                         </li>
-                        <li class="flex items-start">
-                            <span class="text-green-600 mr-2">•</span>
-                            <span><strong>Konten Edukatif:</strong> Artikel, panduan, dan tutorial tentang perawatan tumbuhan.</span>
+                        <li>
+                            <strong>Konten Edukatif:</strong> Artikel, panduan, dan tutorial tentang perawatan tumbuhan.
                         </li>
-                    </ul>
+                    </ol>
                 </div>
             </div>
         </section>
@@ -126,11 +123,5 @@
             </div>
         </section>
     </main>
-
-    <footer class="bg-gradient-to-r from-green-800 to-green-900 text-white py-10">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-sm font-medium opacity-90">&copy; {{ date('Y') }} GrePlant. All rights reserved.</p>
-        </div>
-    </footer>
 </body>
 </html>
